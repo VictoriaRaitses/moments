@@ -10,4 +10,15 @@ public class MomentsApplication {
         SpringApplication.run(MomentsApplication.class, args);
     }
 
+//    @Autowired
+//    UserRepository userRepository;
+//    @PostConstruct
+//    public void test(){
+//
+//
+//       UserEntity user = userRepository.save(UserEntity.builder().userName("vika").build());
+//        System.out.println(user.toString());
+//
+//    }
+
 }
