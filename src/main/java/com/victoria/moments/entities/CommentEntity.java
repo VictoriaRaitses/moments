@@ -16,7 +16,7 @@ public class CommentEntity {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private String id;
     private String body;
 
     //Post

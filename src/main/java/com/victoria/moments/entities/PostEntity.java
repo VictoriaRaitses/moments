@@ -14,7 +14,7 @@ public class PostEntity {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private String id;
     @NonNull
     private String title;
 
