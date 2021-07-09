@@ -1,24 +1,23 @@
 package com.victoria.moments;
 
+import org.ocpsoft.prettytime.PrettyTime;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-public class MomentsApplication {
+@EnableJpaAuditing
+public class MomentsApplication implements WebMvcConfigurer {
 
     public static void main(String[] args) {
         SpringApplication.run(MomentsApplication.class, args);
     }
 
-//    @Autowired
-//    UserRepository userRepository;
-//    @PostConstruct
-//    public void test(){
-//
-//
-//       UserEntity user = userRepository.save(UserEntity.builder().userName("vika").build());
-//        System.out.println(user.toString());
-//
-//    }
+    @Bean
+    PrettyTime prettyTime() {
+        return new PrettyTime();
+    }
 
 }

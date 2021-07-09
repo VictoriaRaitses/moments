@@ -1,0 +1,36 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Moment Upload</title>
+</head>
+<body>
+
+
+<div id="upload" class="bg-modal" th:fragment="submitPopup">
+    <div class="modal-content">
+        <div class="buttons">
+            <img src="/images/collect_moments.png" width="130px">
+            <form method="POST" enctype="multipart/form-data" action="/upload">
+                <table>
+                    <tr>
+                        <td><input type="file" id="real-file" name="file" hidden="hidden"/></td>
+                        <button type="button" id="custom-button" class="btn btn-primary btn-sm">File to upload:</button>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" id="real-submit" value="Upload" hidden="hidden"/></td>
+                        <button type="button" id="submit-button" class="btn btn-secondary btn-sm">Submit</button>
+                    </tr>
+                </table>
+            </form>
+            <div class="d-grid gap-2 col-4 mx-auto">
+                <button type="button" class="btn btn-secondary btn-sm" onclick="closeUploadWindow()">Close</button>
+                <!--<button onclick="closeUploadWindow()">BUTTON CLOSE</button>-->
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>
