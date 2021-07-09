@@ -1,25 +1,47 @@
 package com.victoria.moments.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.NotNull;
+import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class CommentEntity {
+public class CommentEntity extends Auditable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
+    )
     private String id;
+    @NotNull
     private String body;
 
     //Post
+    @ManyToOne
+    @NotNull
+    @ToString.Exclude
+    @JsonIgnore
+    private MomentEntity moment;
 
+    public CommentEntity(String body, MomentEntity moment) {
+        this.body = body;
+        this.moment = moment;
+    }
 
+    @Override
+    public String toString() {
+        return "CommentEntity{" +
+                "id='" + id + '\'' +
+                ", body='" + body + '\'' +
+                //   ", moment=" + moment +
+                '}';
+    }
 }

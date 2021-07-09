@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Style Moment Upload</title><!--
+    <style media="screen">
+    </style>-->
+</head>
+<body>
+
+<div class="submit-view" th:fragment="submit">
+
+    <div id="upload" onclick="closeUploadWindow()" class="upload-window">
+
+        <div>
+            <form method="POST" enctype="multipart/form-data" action="/upload">
+                <table>
+                    <tr>
+                        <td>File to upload:</td>
+                        <td><input type="file" name="file"/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Upload"/></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<!--           .custom-button {
+        margin-top: 15px;
+        margin-left: 10px;
+        padding: 10px;
+        color: paleturquoise;
+        background-color: darkcyan;
+        border: 0.5px solid #030000;
+        border-radius: 5px;
+        cursor: pointer;
+        height: 55px;
+        width: 215px;
+        font-size: large;
+        }
+
+        #custom-button:hover {
+        background-color: lightseagreen;
+        }
+
+        #custom-text {
+        margin-left: 10px;
+        font-family: sans-serif;
+        color: black;
+        font-size: large;
+        }
+
+        body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/static/images/2021-04-26 (8).png');
+        background-size: cover;
+        }
+
+        .image-preview {
+        width: 300px;
+        min-height: 300px;
+        border: 2px solid paleturquoise;
+        margin-top: 15px;
+
+        !*    default text  *!
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: paleturquoise;
+        }
+
+        .image-preview__image {
+        display: none;
+        width: 100%;
+        }-->
+
+<!--    <input type="file" id="real-file" hidden="hidden"/>
+<button type="button" id="custom-button" class="custom-button">CHOOSE A MOMENT</button>
+<span id="custom-text">No moment chosen, yet.</span>
+
+<div class="image-preview" id="imagePreview">
+<img src="" alt="Image Preview" class="image-preview__image">
+<span class="image-preview__default-text">Image Preview</span>
+</div>
+
+
+<div>
+<ul>
+    <li th:each="file : ${files}">
+        <a th:href="${file}" th:text="${file}"/>
+    </li>
+</ul>
+</div>
+
+</div>-->
+
+<!--    <script type="text/javascript">
+        const realFileBtn = document.getElementById("real-file");
+        const customBtn = document.getElementById("custom-button");
+        const customTxt = document.getElementById("custom-text");
+
+        const previewContainer = document.getElementById("imagePreview");
+        const previewImage = previewContainer.querySelector(".image-preview__image");
+        const previewDefaultText = previewContainer.querySelector(".image-preview__default-text");
+
+        var file;
+
+        customBtn.addEventListener("click", function () {
+            realFileBtn.click();
+        });
+
+        function uploadFoto() {
+            console.log("upload");
+            console.log(file);
+        }
+
+        realFileBtn.addEventListener("change", function () {
+            file = this.files[0];
+            if (realFileBtn.value) {
+                customTxt.innerHTML = realFileBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+
+                const reader = new FileReader();
+                previewDefaultText.style.display = "none";
+                previewImage.style.display = "block";
+
+                reader.addEventListener("load", function () {
+                    previewImage.setAttribute("src", this.result);
+
+                    var h1 = document.createElement('button');
+                    h1.setAttribute('class', 'custom-button')
+
+                    previewContainer.insertAdjacentHTML("afterend", "<button type=\"button\"  class=\"custom-button\" onclick='upload()'>Upload</button>\n");
+
+                });
+
+                reader.readAsDataURL(file);
+
+            } else {
+                customTxt.innerHTML = "No file chosen, yet.";
+            }   ````````````
+        });
+    </script>-->
