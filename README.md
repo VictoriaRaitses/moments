@@ -11,4 +11,4 @@ Project is still under development.
 How to:
 
        docker run -d -p 5432:5432 --name moments-postgres -e POSTGRES_PASSWORD=password  -e POSTGRES_DB=moments  -e POSTGRES_USER=moments postgres
-      mvn spring-boot:run
+       mvn spring-boot:run
