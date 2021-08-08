@@ -21,8 +21,6 @@ public class StaticResourceConfiguration implements WebMvcConfigurer {
         return new WebMvcConfigurer() {
             @Override
             public void addResourceHandlers(@NonNull ResourceHandlerRegistry registry) {
-                System.out.println(momentHandlerPath);
-                System.out.println(momentResourcePath);
                 registry.addResourceHandler(momentHandlerPath + "/**")
                         .addResourceLocations("file:///" + momentResourcePath);
             }
