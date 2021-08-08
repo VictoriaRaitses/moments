@@ -35,11 +35,12 @@ public class BaseController {
         return "momentview";
     }
 
-//    @GetMapping("/submitPage")
-//    public String newMoment(Model model) {
-//        model.addAttribute("moment", new MomentEntity());
-//        return "/main/resources/templates/submit/submitPage.html";
-//    }
+
+    @GetMapping("/submitPage")
+    public String newMoment(Model model) {
+        model.addAttribute("moment", new MomentEntity());
+        return "/main/resources/templates/submit/submitPage.html";
+    }
 
 
     @PostMapping("/upload")
