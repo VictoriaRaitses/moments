@@ -1,6 +1,5 @@
 # moments
 
-# Getting Started
 
 **Moments** is a learning curve development project to be able setup and run backend software 
 together with a front end  framework like Thymyleaf and psql using docker.
